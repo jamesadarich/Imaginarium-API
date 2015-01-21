@@ -12,7 +12,9 @@ namespace Managers
         {
             var model = new Adapters.AndroidReportAdapter().AdaptDto(report);
 
-            new DataAccess.Repository().AndroidReports.Add(model);
+            var repository = new DataAccess.Repository();
+            repository.AndroidReports.Add(model);
+            repository.SaveChanges();
 
             return report;
         }
