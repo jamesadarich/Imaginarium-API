@@ -24,8 +24,8 @@ namespace Imaginarium_API.error_reporting
         }
 
         [HttpPut]
-        [Route("error-reporting/report/android")]
-        public DataTransferObjects.AndroidReport Put([FromBody] DataTransferObjects.AndroidReport report)
+        [Route("error-reporting/report/android/{id}")]
+        public DataTransferObjects.AndroidReport Put(Guid id, [FromBody] DataTransferObjects.AndroidReport report)
         {
             if (reports == null)
             {
