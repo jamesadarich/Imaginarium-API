@@ -11,7 +11,16 @@ namespace DataTransferObjects
     public class AndroidReport
     {
         [DataMember]
+        public Guid REPORT_ID;
+
+        [DataMember]
+        public string PACKAGE_NAME;
+
+        [DataMember]
         public string STACK_TRACE;
+
+        [DataMember]
+        public string LOG_CAT;
 
         [DataMember]
         public DateTime USER_APP_START_DATE;

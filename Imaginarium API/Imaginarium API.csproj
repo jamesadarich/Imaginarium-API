@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -101,6 +107,10 @@
     <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
       <Project>{82b23b7b-7059-42f4-8a17-33ebc6f05f11}</Project>
       <Name>DataTransferObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Managers\Managers.csproj">
+      <Project>{68e66fe1-61c6-46b3-94c3-786b38f3758f}</Project>
+      <Name>Managers</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
