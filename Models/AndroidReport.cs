@@ -8,6 +8,11 @@ namespace Models
 {
     public class AndroidReport
     {
+        protected AndroidReport()
+        {
+
+        }
+
         public AndroidReport(Guid id, string packageName){
             _id = id;
             _packageName = packageName;

@@ -19,7 +19,7 @@ namespace Managers
 
         public IEnumerable<DataTransferObjects.AndroidReport> GetAll()
         {
-            var models = new DataAccess.Repository().AndroidReports;
+            var models = new DataAccess.Repository().AndroidReports.ToList();
 
             return models.Select(m => new Adapters.AndroidReportAdapter().AdaptModel(m));
         }
