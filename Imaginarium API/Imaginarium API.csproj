@@ -87,6 +87,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="legends-of-lunchtime\ReviewController.cs" />
     <Compile Include="pattern-builder\PatternController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,9 @@
     <Compile Include="AndroidReport.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LegendsOfLunchtime\Product.cs" />
+    <Compile Include="LegendsOfLunchtime\ProductType.cs" />
+    <Compile Include="LegendsOfLunchtime\Review.cs" />
     <Compile Include="PatternBuilder\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
