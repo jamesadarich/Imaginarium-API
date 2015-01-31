@@ -46,6 +46,7 @@
     <Compile Include="LegendsOfLunchtime\Product.cs" />
     <Compile Include="LegendsOfLunchtime\ProductType.cs" />
     <Compile Include="LegendsOfLunchtime\Review.cs" />
+    <Compile Include="LegendsOfLunchtime\Session.cs" />
     <Compile Include="PatternBuilder\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
