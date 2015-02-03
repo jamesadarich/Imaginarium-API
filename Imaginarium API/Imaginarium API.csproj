@@ -87,6 +87,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="legends-of-lunchtime\FileUploader.cs" />
+    <Compile Include="legends-of-lunchtime\ImageController.cs" />
     <Compile Include="legends-of-lunchtime\ReviewController.cs" />
     <Compile Include="legends-of-lunchtime\SessionController.cs" />
     <Compile Include="pattern-builder\PatternController.cs" />
@@ -104,6 +106,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="legends-of-lunchtime\images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
