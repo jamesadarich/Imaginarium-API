@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "Imaginarium API\API.csproj", "{966FDD66-4996-4841-ACE4-B48475218089}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{966FDD66-4996-4841-ACE4-B48475218089}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObjects", "DataTransferObjects\DataTransferObjects.csproj", "{82B23B7B-7059-42F4-8A17-33EBC6F05F11}"
 EndProject

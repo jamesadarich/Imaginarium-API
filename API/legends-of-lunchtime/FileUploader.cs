@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Imaginarium_API.legends_of_lunchtime
+namespace API.legends_of_lunchtime
 {
     public class FileUploader
     {

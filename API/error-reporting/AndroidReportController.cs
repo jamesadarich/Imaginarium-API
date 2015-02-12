@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Imaginarium_API.error_reporting
+namespace API.error_reporting
 {
     public class AndroidReportController : ApiController
     {

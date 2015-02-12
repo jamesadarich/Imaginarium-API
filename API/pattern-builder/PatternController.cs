@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Imaginarium_API.pattern_builder
+namespace API.pattern_builder
 {
     public class PatternController : ApiController
     {

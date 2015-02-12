@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Threading.Tasks;
 
-namespace Imaginarium_API.legends_of_lunchtime
+namespace API.legends_of_lunchtime
 {
     public class ImageController : ApiController
     {

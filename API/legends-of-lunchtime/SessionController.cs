@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Imaginarium_API.legends_of_lunchtime
+namespace API.legends_of_lunchtime
 {
     public class SessionController : ApiController
     {
