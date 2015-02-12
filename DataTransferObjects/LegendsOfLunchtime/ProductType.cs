@@ -15,5 +15,8 @@ namespace DataTransferObjects.LegendsOfLunchtime
 
         [DataMember]
         public string Name;
+
+        [DataMember]
+        public IEnumerable<RatingType> RatingTypes;
     }
 }

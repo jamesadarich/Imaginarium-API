@@ -8,24 +8,15 @@ using System.Runtime.Serialization;
 namespace DataTransferObjects.LegendsOfLunchtime
 {
     [DataContract]
-    public class Review
+    public class Rating
     {
         [DataMember]
         public Guid Id;
 
         [DataMember]
-        public Product Product;
+        public RatingType Type;
 
         [DataMember]
-        public IEnumerable<Rating> Ratings;
-
-        [DataMember]
-        public string Title;
-
-        [DataMember]
-        public string Summary;
-
-        [DataMember]
-        public string Content;
+        public int Value;
     }
 }

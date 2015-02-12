@@ -46,8 +46,11 @@
     <Compile Include="LegendsOfLunchtime\Image.cs" />
     <Compile Include="LegendsOfLunchtime\Product.cs" />
     <Compile Include="LegendsOfLunchtime\ProductType.cs" />
+    <Compile Include="LegendsOfLunchtime\Rating.cs" />
+    <Compile Include="LegendsOfLunchtime\RatingType.cs" />
     <Compile Include="LegendsOfLunchtime\Review.cs" />
     <Compile Include="LegendsOfLunchtime\Session.cs" />
+    <Compile Include="LegendsOfLunchtime\User.cs" />
     <Compile Include="PatternBuilder\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
