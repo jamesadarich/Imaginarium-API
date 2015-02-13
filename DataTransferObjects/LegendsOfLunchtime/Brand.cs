@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace DataTransferObjects.LegendsOfLunchtime
 {
     [DataContract]
-    public class Product
+    public class Brand
     {
         [DataMember]
         public Guid Id;
@@ -17,12 +17,6 @@ namespace DataTransferObjects.LegendsOfLunchtime
         public string Name;
 
         [DataMember]
-        public ProductType Type;
-
-        [DataMember]
-        public Brand Brand;
-
-        [DataMember]
-        public IEnumerable<Rating> Ratings;
+        public string LogoUrl;
     }
 }

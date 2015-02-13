@@ -43,6 +43,7 @@
     <Compile Include="AndroidReport.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LegendsOfLunchtime\Brand.cs" />
     <Compile Include="LegendsOfLunchtime\Image.cs" />
     <Compile Include="LegendsOfLunchtime\Product.cs" />
     <Compile Include="LegendsOfLunchtime\ProductType.cs" />
