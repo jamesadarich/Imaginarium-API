@@ -23,6 +23,9 @@ namespace DataTransferObjects.LegendsOfLunchtime
         public string Title;
 
         [DataMember]
+        public string Slug;
+
+        [DataMember]
         public string Summary;
 
         [DataMember]
