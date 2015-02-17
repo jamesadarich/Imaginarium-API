@@ -27,7 +27,10 @@ namespace Adapters
 
             model.StackTrace = dto.STACK_TRACE;
             model.LogCat = dto.LOG_CAT;
-            model.CrashDate = dto.USER_CRASH_DATE;
+            if (dto.USER_CRASH_DATE.HasValue)
+            {
+                model.CrashDate = dto.USER_CRASH_DATE.Value;
+            }
 
             if (string.IsNullOrWhiteSpace(model.StackTrace))
             {

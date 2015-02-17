@@ -23,9 +23,9 @@ namespace DataTransferObjects
         public string LOG_CAT;
 
         [DataMember]
-        public DateTime USER_APP_START_DATE;
+        public Nullable<DateTime> USER_APP_START_DATE;
 
         [DataMember]
-        public DateTime USER_CRASH_DATE;
+        public Nullable<DateTime> USER_CRASH_DATE;
     }
 }
