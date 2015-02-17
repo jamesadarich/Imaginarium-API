@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidReportAdapter.cs" />
+    <Compile Include="LegendsOfLunchtime\ReviewAdapter.cs" />
+    <Compile Include="LegendsOfLunchtime\UserAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

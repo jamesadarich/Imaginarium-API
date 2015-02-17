@@ -14,8 +14,18 @@ namespace Models
         }
 
         public AndroidReport(Guid id, string packageName){
+
             _id = id;
             _packageName = packageName;
+
+            if (_id == null)
+            {
+                _id = Guid.NewGuid();
+            }
+            if (string.IsNullOrWhiteSpace(_packageName))
+            {
+                _packageName = "Unknown";
+            }
         }
         
         private Guid _id;

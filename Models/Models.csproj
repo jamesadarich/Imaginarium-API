@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidReport.cs" />
+    <Compile Include="LegendsOfLunchtime\Brand.cs" />
+    <Compile Include="LegendsOfLunchtime\Product.cs" />
+    <Compile Include="LegendsOfLunchtime\ProductType.cs" />
+    <Compile Include="LegendsOfLunchtime\Rating.cs" />
+    <Compile Include="LegendsOfLunchtime\RatingType.cs" />
+    <Compile Include="LegendsOfLunchtime\Review.cs" />
+    <Compile Include="LegendsOfLunchtime\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

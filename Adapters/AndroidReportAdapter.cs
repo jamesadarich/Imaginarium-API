@@ -29,6 +29,19 @@ namespace Adapters
             model.LogCat = dto.LOG_CAT;
             model.CrashDate = dto.USER_CRASH_DATE;
 
+            if (string.IsNullOrWhiteSpace(model.StackTrace))
+            {
+                model.StackTrace = "Unknown";
+            }
+            if (string.IsNullOrWhiteSpace(model.LogCat))
+            {
+                model.LogCat = "Unknown";
+            }
+            if (model.CrashDate == new DateTime())
+            {
+                model.CrashDate = DateTime.UtcNow;
+            }
+
             return model;
         }
     }

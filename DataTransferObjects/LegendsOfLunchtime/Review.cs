@@ -30,5 +30,11 @@ namespace DataTransferObjects.LegendsOfLunchtime
 
         [DataMember]
         public string Content;
+
+        [DataMember]
+        public DateTime Timestamp;
+
+        [DataMember]
+        public User Author;
     }
 }

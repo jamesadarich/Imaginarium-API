@@ -105,13 +105,19 @@ namespace API.legends_of_lunchtime
                 rating.Type = ratingType;
             }
             review.Ratings = ratings.AsEnumerable();
+
+            return review;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("legends-of-lunchtime/review")]
         public DataTransferObjects.LegendsOfLunchtime.Review Post([FromBody] DataTransferObjects.LegendsOfLunchtime.Review review)
         {
+            var username = User.Identity.Name;
             review.Id = Guid.NewGuid();
+
+            review = new Managers.LegendsOfLunchtime.ReviewManager().Create(review, username);
             return review;
         }
 
