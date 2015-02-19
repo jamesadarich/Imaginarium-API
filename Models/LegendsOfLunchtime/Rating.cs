@@ -12,7 +12,8 @@ namespace Models.LegendsOfLunchtime
         [Key]
         public Guid Id { get; set; }
 
-        public RatingType Type { get; set; }
+        public Guid RatingTypeId { get; set; }
+        public virtual RatingType Type { get; set; }
 
         public int Value { get; set; }
     }

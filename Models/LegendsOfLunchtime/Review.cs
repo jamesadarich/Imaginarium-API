@@ -9,12 +9,18 @@ namespace Models.LegendsOfLunchtime
 {
     public class Review
     {
+        public Review()
+        {
+            Ratings = new List<Rating>();
+        }
+
         [Key]
         public Guid Id { get; set; }
 
-        public Product Product { get; set; }
+        public Guid ProductId { get; set; }
+        public virtual Product Product { get; set; }
 
-        public IEnumerable<Rating> Ratings { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
 
         public string Title { get; set; }
 
@@ -26,6 +32,7 @@ namespace Models.LegendsOfLunchtime
 
         public DateTime Timestamp { get; set; }
 
-        public User Author { get; set; }
+        public Guid AuthorId { get; set; }
+        public virtual User Author { get; set; }
     }
 }

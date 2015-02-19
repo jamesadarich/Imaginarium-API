@@ -9,11 +9,18 @@ namespace Models.LegendsOfLunchtime
 {
     public class RatingType
     {
+        public RatingType()
+        {
+            ProductTypes = new List<ProductType>();
+        }
+
         [Key]
         public Guid Id { get; set; }
 
         public string Name { get; set; }
 
         public string IconUrl { get; set; }
+
+        public virtual ICollection<ProductType> ProductTypes { get; set; }
     }
 }

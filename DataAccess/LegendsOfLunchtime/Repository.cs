@@ -31,7 +31,15 @@ namespace DataAccess.LegendsOfLunchtime
 
             modelBuilder.Entity<Models.LegendsOfLunchtime.Brand>().ToTable("LoL_Brand");
             modelBuilder.Entity<Models.LegendsOfLunchtime.Product>().ToTable("LoL_Product");
-            modelBuilder.Entity<Models.LegendsOfLunchtime.ProductType>().ToTable("LoL_ProductType");
+            modelBuilder.Entity<Models.LegendsOfLunchtime.ProductType>().ToTable("LoL_ProductType")
+                .HasMany<Models.LegendsOfLunchtime.RatingType>(s => s.RatingTypes)
+                   .WithMany(c => c.ProductTypes)
+                   .Map(cs =>
+                   {
+                       cs.MapLeftKey("ProductTypeId");
+                       cs.MapRightKey("RatingTypeId");
+                       cs.ToTable("LoL_ProductType_RatingType");
+                   });
             modelBuilder.Entity<Models.LegendsOfLunchtime.Rating>().ToTable("LoL_Rating");
             modelBuilder.Entity<Models.LegendsOfLunchtime.RatingType>().ToTable("LoL_RatingType");
             modelBuilder.Entity<Models.LegendsOfLunchtime.Review>().ToTable("LoL_Review");

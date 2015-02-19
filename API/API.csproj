@@ -119,6 +119,7 @@
     <Compile Include="legends-of-lunchtime\AccountController.cs" />
     <Compile Include="legends-of-lunchtime\FileUploader.cs" />
     <Compile Include="legends-of-lunchtime\ImageController.cs" />
+    <Compile Include="legends-of-lunchtime\ProductTypeController.cs" />
     <Compile Include="legends-of-lunchtime\ReviewController.cs" />
     <Compile Include="legends-of-lunchtime\SessionController.cs" />
     <Compile Include="pattern-builder\PatternController.cs" />

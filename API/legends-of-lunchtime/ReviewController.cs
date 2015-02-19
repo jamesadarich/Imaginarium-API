@@ -13,6 +13,7 @@ namespace API.legends_of_lunchtime
         [Route("legends-of-lunchtime/reviews")]
         public IEnumerable<DataTransferObjects.LegendsOfLunchtime.Review> GetAll()
         {
+            /*c
             var reviews = new List<DataTransferObjects.LegendsOfLunchtime.Review>();
 
             for (var i = 0; i < 5; i++)
@@ -60,12 +61,16 @@ namespace API.legends_of_lunchtime
             }
 
             return reviews;
+             */
+
+            return new Managers.LegendsOfLunchtime.ReviewManager().GetAll();
         }
 
         [HttpGet]
         [Route("legends-of-lunchtime/review/{slug}")]
         public DataTransferObjects.LegendsOfLunchtime.Review Get(string slug)
         {
+            /*
             var review = new DataTransferObjects.LegendsOfLunchtime.Review();
             review.Id = Guid.NewGuid();
             review.Content = string.Format("review {0} is a certain sort of thing.", slug);
@@ -107,6 +112,9 @@ namespace API.legends_of_lunchtime
             review.Ratings = ratings.AsEnumerable();
 
             return review;
+             */
+
+            return new Managers.LegendsOfLunchtime.ReviewManager().GetBySlug(slug);
         }
 
         [Authorize]
@@ -115,7 +123,7 @@ namespace API.legends_of_lunchtime
         public DataTransferObjects.LegendsOfLunchtime.Review Post([FromBody] DataTransferObjects.LegendsOfLunchtime.Review review)
         {
             var username = User.Identity.Name;
-            review.Id = Guid.NewGuid();
+            //review.Id = Guid.NewGuid();
 
             review = new Managers.LegendsOfLunchtime.ReviewManager().Create(review, username);
             return review;
