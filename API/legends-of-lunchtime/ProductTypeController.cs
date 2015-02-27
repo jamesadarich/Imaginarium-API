@@ -11,6 +11,7 @@ namespace API.legends_of_lunchtime
     {
         [HttpGet]
         [Route("legends-of-lunchtime/product-types")]
+        [Filters.UnhandledExceptionFilter]
         public IEnumerable<DataTransferObjects.LegendsOfLunchtime.ProductType> GetAll()
         {
             return new Managers.LegendsOfLunchtime.ProductTypeManager().GetAll();
