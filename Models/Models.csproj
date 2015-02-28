@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndroidReport.cs" />
+    <Compile Include="ErrorReaper\AndroidReport.cs" />
     <Compile Include="LegendsOfLunchtime\Brand.cs" />
     <Compile Include="LegendsOfLunchtime\Product.cs" />
     <Compile Include="LegendsOfLunchtime\ProductType.cs" />
@@ -49,6 +49,9 @@
     <Compile Include="LegendsOfLunchtime\Review.cs" />
     <Compile Include="LegendsOfLunchtime\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,13 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace API.legends_of_lunchtime
+namespace LegendsOfLunchtime.Api
 {
     public class ReviewController : ApiController
     {
         [HttpGet]
         [Route("legends-of-lunchtime/reviews")]
-        public IEnumerable<DataTransferObjects.LegendsOfLunchtime.Review> GetAll()
+        public IEnumerable<DataTransferObjects.Review> GetAll()
         {
             /*c
             var reviews = new List<DataTransferObjects.LegendsOfLunchtime.Review>();
@@ -63,12 +63,12 @@ namespace API.legends_of_lunchtime
             return reviews;
              */
 
-            return new Managers.LegendsOfLunchtime.ReviewManager().GetAll();
+            return new Managers.ReviewManager().GetAll();
         }
 
         [HttpGet]
         [Route("legends-of-lunchtime/review/{slug}")]
-        public DataTransferObjects.LegendsOfLunchtime.Review Get(string slug)
+        public DataTransferObjects.Review Get(string slug)
         {
             /*
             var review = new DataTransferObjects.LegendsOfLunchtime.Review();
@@ -114,24 +114,24 @@ namespace API.legends_of_lunchtime
             return review;
              */
 
-            return new Managers.LegendsOfLunchtime.ReviewManager().GetBySlug(slug);
+            return new Managers.ReviewManager().GetBySlug(slug);
         }
 
         [Authorize]
         [HttpPost]
         [Route("legends-of-lunchtime/review")]
-        public DataTransferObjects.LegendsOfLunchtime.Review Post([FromBody] DataTransferObjects.LegendsOfLunchtime.Review review)
+        public DataTransferObjects.Review Post([FromBody] DataTransferObjects.Review review)
         {
             var username = User.Identity.Name;
             //review.Id = Guid.NewGuid();
 
-            review = new Managers.LegendsOfLunchtime.ReviewManager().Create(review, username);
+            review = new Managers.ReviewManager().Create(review, username);
             return review;
         }
 
         [HttpPut]
         [Route("legends-of-lunchtime/review")]
-        public DataTransferObjects.LegendsOfLunchtime.Review Put([FromBody] DataTransferObjects.LegendsOfLunchtime.Review review)
+        public DataTransferObjects.Review Put([FromBody] DataTransferObjects.Review review)
         {
             return review;
         }

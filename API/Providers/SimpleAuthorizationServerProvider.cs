@@ -7,7 +7,7 @@ using System.Security.Claims;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace API.Providers
+namespace Imaginarium.API.Providers
 {
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
@@ -21,7 +21,7 @@ namespace API.Providers
 
             //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            using (Managers.LegendsOfLunchtime.AuthroizationManager _repo = new Managers.LegendsOfLunchtime.AuthroizationManager())
+            using (LegendsOfLunchtime.Managers.AuthroizationManager _repo = new LegendsOfLunchtime.Managers.AuthroizationManager())
             {
                 IdentityUser user = _repo.FindUser(context.UserName, context.Password);
 

@@ -16,17 +16,31 @@ namespace Adapters.LegendsOfLunchtime
             }
 
             var model = new Models.LegendsOfLunchtime.Review();
+            model.Id = Guid.NewGuid();
+            if (review.Id != new Guid())
+            {
+                model = new DataAccess.LegendsOfLunchtime.Repository().Reviews.Where(b => b.Id == review.Id).Single();
+            }
 
             model.Content = review.Content;
-            model.Id = review.Id;
             model.Slug = review.Slug;
             model.Summary = review.Summary;
             model.Timestamp = review.Timestamp;
             model.Title = review.Title;
 
             model.Author = new UserAdapter().AdaptDto(review.Author);
+            model.AuthorId = model.Author.Id;
             model.Product = new ProductAdapter().AdaptDto(review.Product);
-            model.Ratings = review.Ratings.Select(r => new RatingAdapter().AdaptDto(r)).ToList();
+            model.ProductId = model.Product.Id;
+
+            if (review.Ratings == null)
+            {
+                model.Ratings = null;
+            }
+            else
+            {
+                model.Ratings = review.Ratings.Select(r => new RatingAdapter().AdaptDto(r)).ToList();
+            }
 
             return model;
         }

@@ -73,11 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthContext.cs">
+    <Compile Include="Imaginarium\AuthContext.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LegendsOfLunchtime\Repository.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="ErrorReaper\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

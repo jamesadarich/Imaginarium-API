@@ -4,17 +4,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using API.Filters;
 
-namespace API.legends_of_lunchtime
+namespace LegendsOfLunchtime.Api
 {
     public class ProductTypeController : ApiController
     {
         [HttpGet]
         [Route("legends-of-lunchtime/product-types")]
-        [Filters.UnhandledExceptionFilter]
-        public IEnumerable<DataTransferObjects.LegendsOfLunchtime.ProductType> GetAll()
+        [UnhandledExceptionFilter]
+        public IEnumerable<DataTransferObjects.ProductType> GetAll()
         {
-            return new Managers.LegendsOfLunchtime.ProductTypeManager().GetAll();
+            return new Managers.ProductTypeManager().GetAll();
         }
     }
 }

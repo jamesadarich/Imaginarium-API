@@ -5,22 +5,24 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
+using API.Filters;
 
-namespace API.legends_of_lunchtime
+namespace LegendsOfLunchtime.Api
 {
     public class AccountController : ApiController
     {
-        private Managers.LegendsOfLunchtime.AuthroizationManager _repo = null;
+        private Managers.AuthroizationManager _repo = null;
 
         public AccountController()
         {
-            _repo = new Managers.LegendsOfLunchtime.AuthroizationManager();
+            _repo = new Managers.AuthroizationManager();
         }
 
         [AllowAnonymous]
         [Route("legends-of-lunchtime/register")]
+        [UnhandledExceptionFilter]
         [HttpPost]
-        public IHttpActionResult Register([FromBody]DataTransferObjects.Identity userModel)
+        public IHttpActionResult Register([FromBody] Imaginarium.DataTransferObjects.Identity userModel)
         {
             if (!ModelState.IsValid)
             {

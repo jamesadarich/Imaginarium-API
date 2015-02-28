@@ -27,7 +27,7 @@ namespace API
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new Providers.SimpleAuthorizationServerProvider()
+                Provider = new Imaginarium.API.Providers.SimpleAuthorizationServerProvider()
             };
 
             // Token Generation

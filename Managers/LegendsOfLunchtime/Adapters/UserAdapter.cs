@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adapters.LegendsOfLunchtime
+namespace LegendsOfLunchtime.Managers.Adapters
 {
-    public class UserAdapter
+    public static class UserAdapter
     {
-        public DataTransferObjects.LegendsOfLunchtime.User AdaptModel(Models.LegendsOfLunchtime.User user)
+        public static DataTransferObjects.User ToDto(this Models.User user)
         {
             if (user == null)
             {
                 return null;
             }
 
-            var dto = new DataTransferObjects.LegendsOfLunchtime.User();
+            var dto = new DataTransferObjects.User();
 
             dto.Id = user.Id;
             dto.FirstName = user.FirstName;
@@ -25,18 +25,18 @@ namespace Adapters.LegendsOfLunchtime
             return dto;
         }
 
-        public Models.LegendsOfLunchtime.User AdaptDto(DataTransferObjects.LegendsOfLunchtime.User user)
+        public static Models.User ToModel(this DataTransferObjects.User user, DataAccess.Repository repository)
         {
             if (user == null)
             {
                 return null;
             }
 
-            var model = new Models.LegendsOfLunchtime.User();
+            var model = new Models.User();
             model.Id = Guid.NewGuid();
             if (user.Id != new Guid())
             {
-                model = new DataAccess.LegendsOfLunchtime.Repository().Users.Where(b => b.Id == user.Id).Single();
+                model = repository.Users.Where(b => b.Id == user.Id).Single();
             }
 
             model.FirstName = user.FirstName;

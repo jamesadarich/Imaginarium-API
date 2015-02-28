@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace API.legends_of_lunchtime
+namespace LegendsOfLunchtime.Api
 {
     public class FileUploader
     {

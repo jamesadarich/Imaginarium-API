@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace API.error_reporting
+namespace ErrorReaper.Api
 {
     public class AndroidReportController : ApiController
     {

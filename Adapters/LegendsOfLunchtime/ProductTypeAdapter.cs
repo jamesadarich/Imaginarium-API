@@ -30,12 +30,22 @@ namespace Adapters.LegendsOfLunchtime
             {
                 return null;
             }
-
             var model = new Models.LegendsOfLunchtime.ProductType();
+            model.Id = Guid.NewGuid();
+            if (productType.Id != new Guid())
+            {
+                model = new DataAccess.LegendsOfLunchtime.Repository().ProductTypes.Where(b => b.Id == productType.Id).Single();
+            }
 
-            model.Id = productType.Id;
             model.Name = productType.Name;
-            model.RatingTypes = productType.RatingTypes.Select(r => new RatingTypeAdapter().AdaptDto(r)).ToList();
+            if (productType.RatingTypes != null)
+            {
+                model.RatingTypes = productType.RatingTypes.Select(r => new RatingTypeAdapter().AdaptDto(r)).ToList();
+            }
+            else
+            {
+                productType.RatingTypes = null;
+            }
 
             return model;
         }

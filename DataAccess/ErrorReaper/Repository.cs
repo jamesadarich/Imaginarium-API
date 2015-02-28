@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions; 
 
-namespace DataAccess
+namespace ErrorReaper.DataAccess
 {
     public class Repository : DbContext
     {

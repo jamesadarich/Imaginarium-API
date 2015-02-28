@@ -5,22 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using DataTransferObjects;
 
-namespace Managers.LegendsOfLunchtime
+namespace LegendsOfLunchtime.Managers
 {
     public class AuthroizationManager : IDisposable
     {
-        private DataAccess.AuthContext _ctx;
+        private Imaginarium.DataAccess.AuthContext _ctx;
 
         private UserManager<IdentityUser> _userManager;
 
         public AuthroizationManager()
         {
-            _ctx = new DataAccess.AuthContext();
+            _ctx = new Imaginarium.DataAccess.AuthContext();
             _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
         }
 
-        public IdentityResult RegisterUser(DataTransferObjects.Identity userModel)
+        public IdentityResult RegisterUser(Imaginarium.DataTransferObjects.Identity userModel)
         {
             IdentityUser user = new IdentityUser
             {
@@ -28,6 +29,16 @@ namespace Managers.LegendsOfLunchtime
             };
 
             var result = _userManager.Create(user, userModel.Password);
+
+            var legendsOfLunchtimeUser = new Models.User();
+            legendsOfLunchtimeUser.Id = Guid.NewGuid();
+            legendsOfLunchtimeUser.Username = userModel.Username;
+            legendsOfLunchtimeUser.FirstName = "New";
+            legendsOfLunchtimeUser.LastName = "User";
+
+            var repo = new DataAccess.Repository();
+            repo.Users.Add(legendsOfLunchtimeUser);
+            var t = repo.SaveChanges();
 
             return result;
         }

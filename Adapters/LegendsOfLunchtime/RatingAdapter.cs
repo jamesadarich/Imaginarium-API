@@ -31,13 +31,16 @@ namespace Adapters.LegendsOfLunchtime
             {
                 return null;
             }
-
             var model = new Models.LegendsOfLunchtime.Rating();
+            model.Id = Guid.NewGuid();
+            if (rating.Id != new Guid())
+            {
+                model = new DataAccess.LegendsOfLunchtime.Repository().Ratings.Where(b => b.Id == rating.Id).Single();
+            }
 
-            model.Id = rating.Id;
             model.Value = rating.Value;
-
             model.Type = new RatingTypeAdapter().AdaptDto(rating.Type);
+            model.RatingTypeId = model.Type.Id;
 
             return model;
         }

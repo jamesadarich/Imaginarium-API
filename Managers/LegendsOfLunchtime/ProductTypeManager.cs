@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LegendsOfLunchtime.Managers.Adapters;
 
-namespace Managers.LegendsOfLunchtime
+namespace LegendsOfLunchtime.Managers
 {
     public class ProductTypeManager
     {
-        public IEnumerable<DataTransferObjects.LegendsOfLunchtime.ProductType> GetAll()
+        public IEnumerable<DataTransferObjects.ProductType> GetAll()
         {
-            var repo = new DataAccess.LegendsOfLunchtime.Repository();
+            var repo = new DataAccess.Repository();
 
             var productTypes = repo.ProductTypes.ToList();
 
-            return productTypes.Select(p => new Adapters.LegendsOfLunchtime.ProductTypeAdapter().AdaptModel(p));
+            return productTypes.Select(p => p.ToDto());
         }
     }
 }

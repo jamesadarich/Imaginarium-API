@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace DataAccess
+namespace Imaginarium.DataAccess
 {
     public class AuthContext : IdentityDbContext<IdentityUser>
     {

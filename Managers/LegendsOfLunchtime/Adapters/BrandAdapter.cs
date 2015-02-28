@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adapters.LegendsOfLunchtime
+namespace LegendsOfLunchtime.Managers.Adapters
 {
-    public class BrandAdapter
+    public static class BrandAdapter
     {
-        public DataTransferObjects.LegendsOfLunchtime.Brand AdaptModel(Models.LegendsOfLunchtime.Brand brand)
+        public static DataTransferObjects.Brand ToDto(this Models.Brand brand)
         {
             if (brand == null)
             {
                 return null;
             }
 
-            var dto = new DataTransferObjects.LegendsOfLunchtime.Brand();
+            var dto = new DataTransferObjects.Brand();
 
             dto.Id = brand.Id;
             dto.LogoUrl = brand.LogoUrl;
@@ -24,18 +24,18 @@ namespace Adapters.LegendsOfLunchtime
             return dto;
         }
 
-        public Models.LegendsOfLunchtime.Brand AdaptDto(DataTransferObjects.LegendsOfLunchtime.Brand brand)
+        public static Models.Brand ToModel(this DataTransferObjects.Brand brand, DataAccess.Repository repository)
         {
             if (brand == null)
             {
                 return null;
             }
 
-            var model = new Models.LegendsOfLunchtime.Brand();
+            var model = new Models.Brand();
             model.Id = Guid.NewGuid();
             if (brand.Id != new Guid())
             {
-                model = new DataAccess.LegendsOfLunchtime.Repository().Brands.Where(b => b.Id == brand.Id).Single();
+                model = repository.Brands.Where(b => b.Id == brand.Id).Single();
             }
 
             model.LogoUrl = brand.LogoUrl;

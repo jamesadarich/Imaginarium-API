@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adapters
+namespace ErrorReaper.Managers.Adapters
 {
-    public class AndroidReportAdapter
+    public static class AndroidReportAdapter
     {
-        public DataTransferObjects.AndroidReport AdaptModel(Models.AndroidReport model)
+        public static DataTransferObjects.AndroidReport ToDto(this Models.AndroidReport model)
         {
             var dto = new DataTransferObjects.AndroidReport();
 
@@ -21,7 +21,7 @@ namespace Adapters
             return dto;
         }
 
-        public Models.AndroidReport AdaptDto(DataTransferObjects.AndroidReport dto)
+        public static Models.AndroidReport ToModel(this DataTransferObjects.AndroidReport dto)
         {
             var model = new Models.AndroidReport(dto.REPORT_ID, dto.PACKAGE_NAME);
 

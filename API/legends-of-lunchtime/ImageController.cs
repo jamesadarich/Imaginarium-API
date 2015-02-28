@@ -6,12 +6,12 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Threading.Tasks;
 
-namespace API.legends_of_lunchtime
+namespace LegendsOfLunchtime.Api
 {
     public class ImageController : ApiController
     {
         [HttpPost, Route("image/upload")]
-        public async Task<DataTransferObjects.LegendsOfLunchtime.Image> Upload()
+        public async Task<DataTransferObjects.Image> Upload()
         {
             if (!Request.Content.IsMimeMultipartContent())
                 throw new Exception(); // divided by zero
@@ -26,14 +26,14 @@ namespace API.legends_of_lunchtime
                 var t = e.Message;
             }
 
-            var image = new DataTransferObjects.LegendsOfLunchtime.Image();
+            var image = new DataTransferObjects.Image();
 
             foreach (var file in provider.Contents)
             {
                 var filename = file.Headers.ContentDisposition.FileName.Trim('\"');
                 var buffer = await file.ReadAsByteArrayAsync();
 
-                var url = new FileUploader().UploadImage(filename, buffer);
+                //Need to implement var url = new FileUploader().UploadImage(filename, buffer);
 
                 var sessionId = Guid.Parse(Request.Headers.Authorization.Scheme);
                 return null; // new Managers.ImageManager().Create(url, sessionId);

@@ -35,13 +35,23 @@ namespace Adapters.LegendsOfLunchtime
             }
 
             var model = new Models.LegendsOfLunchtime.Product();
+            model.Id = Guid.NewGuid();
+            if (product.Id != new Guid())
+            {
+                model = new DataAccess.LegendsOfLunchtime.Repository().Products.Where(b => b.Id == product.Id).Single();
+            }
 
-            model.Id = product.Id;
             model.Name = product.Name;
-            model.Ratings = product.Ratings.Select(r => new RatingAdapter().AdaptDto(r)).ToList();
 
-            model.Brand = new BrandAdapter().AdaptModel(product.Brand);
+            model.Brand = new BrandAdapter().AdaptDto(product.Brand);
+            model.BrandId = model.Brand.Id;
             model.Type = new ProductTypeAdapter().AdaptModel(product.Type);
+            model.ProductTypeId = model.Type.Id;
+
+            if (product.Ratings != null)
+            {
+                model.Ratings = product.Ratings.Select(r => new RatingAdapter().AdaptDto(r)).ToList();
+            }
 
             return model;
         }

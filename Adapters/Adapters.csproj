@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndroidReportAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\BrandAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\ProductAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\RatingAdapter.cs" />

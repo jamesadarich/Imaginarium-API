@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adapters.LegendsOfLunchtime
+namespace LegendsOfLunchtime.Managers.Adapters
 {
-    public class RatingTypeAdapter
+    public static class RatingTypeAdapter
     {
-        public DataTransferObjects.LegendsOfLunchtime.RatingType AdaptModel(Models.LegendsOfLunchtime.RatingType ratingType)
+        public static DataTransferObjects.RatingType ToDto(this Models.RatingType ratingType)
         {
             if (ratingType == null)
             {
                 return null;
             }
 
-            var dto = new DataTransferObjects.LegendsOfLunchtime.RatingType();
+            var dto = new DataTransferObjects.RatingType();
 
             dto.Id = ratingType.Id;
             dto.IconUrl = ratingType.IconUrl;
@@ -24,18 +24,18 @@ namespace Adapters.LegendsOfLunchtime
             return dto;
         }
 
-        public Models.LegendsOfLunchtime.RatingType AdaptDto(DataTransferObjects.LegendsOfLunchtime.RatingType ratingType)
+        public static Models.RatingType ToModel(this DataTransferObjects.RatingType ratingType, DataAccess.Repository repository)
         {
             if (ratingType == null)
             {
                 return null;
             }
 
-            var model = new Models.LegendsOfLunchtime.RatingType();
+            var model = new Models.RatingType();
             model.Id = Guid.NewGuid();
             if (ratingType.Id != new Guid())
             {
-                model = new DataAccess.LegendsOfLunchtime.Repository().RatingTypes.Where(b => b.Id == ratingType.Id).Single();
+                model = repository.RatingTypes.Where(b => b.Id == ratingType.Id).Single();
             }
 
             model.IconUrl = ratingType.IconUrl;
