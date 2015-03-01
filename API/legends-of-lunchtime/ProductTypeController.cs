@@ -17,5 +17,29 @@ namespace LegendsOfLunchtime.Api
         {
             return new Managers.ProductTypeManager().GetAll();
         }
+
+        [HttpPost]
+        [Route("legends-of-lunchtime/product-types")]
+        [Authorize]
+        public DataTransferObjects.ProductType Post(DataTransferObjects.ProductType productType)
+        {
+            return new Managers.ProductTypeManager().Create(productType);
+        }
+
+        [HttpPut]
+        [Route("legends-of-lunchtime/product-types")]
+        [Authorize]
+        public DataTransferObjects.ProductType Put(DataTransferObjects.ProductType productType)
+        {
+            return new Managers.ProductTypeManager().Update(productType);
+        }
+
+        [HttpDelete]
+        [Route("legends-of-lunchtime/product-types")]
+        [Authorize]
+        public void Delete(DataTransferObjects.ProductType productType)
+        {
+            new Managers.ProductTypeManager().Delete(productType);
+        }
     }
 }

@@ -83,7 +83,10 @@
     <Compile Include="LegendsOfLunchtime\Adapters\ReviewAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\UserAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\AuthroizationManager.cs" />
+    <Compile Include="LegendsOfLunchtime\BrandManager.cs" />
+    <Compile Include="LegendsOfLunchtime\ProductManager.cs" />
     <Compile Include="LegendsOfLunchtime\ProductTypeManager.cs" />
+    <Compile Include="LegendsOfLunchtime\RatingTypeManager.cs" />
     <Compile Include="LegendsOfLunchtime\ReviewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

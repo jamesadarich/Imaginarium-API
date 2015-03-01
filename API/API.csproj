@@ -118,9 +118,12 @@
     <Compile Include="error-reporting\AndroidReportController.cs" />
     <Compile Include="Filters\UnhandledExceptionFilter.cs" />
     <Compile Include="legends-of-lunchtime\AccountController.cs" />
+    <Compile Include="legends-of-lunchtime\BrandController.cs" />
     <Compile Include="legends-of-lunchtime\FileUploader.cs" />
     <Compile Include="legends-of-lunchtime\ImageController.cs" />
+    <Compile Include="legends-of-lunchtime\ProductController.cs" />
     <Compile Include="legends-of-lunchtime\ProductTypeController.cs" />
+    <Compile Include="legends-of-lunchtime\RatingTypeController.cs" />
     <Compile Include="legends-of-lunchtime\ReviewController.cs" />
     <Compile Include="pattern-builder\PatternController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

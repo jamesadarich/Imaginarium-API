@@ -131,6 +131,7 @@ namespace LegendsOfLunchtime.Api
 
         [HttpPut]
         [Route("legends-of-lunchtime/review")]
+        [Authorize]
         public DataTransferObjects.Review Put([FromBody] DataTransferObjects.Review review)
         {
             return review;

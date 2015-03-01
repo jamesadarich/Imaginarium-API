@@ -12,10 +12,33 @@ namespace LegendsOfLunchtime.Managers
         public IEnumerable<DataTransferObjects.ProductType> GetAll()
         {
             var repo = new DataAccess.Repository();
-
             var productTypes = repo.ProductTypes.ToList();
-
             return productTypes.Select(p => p.ToDto());
+        }
+        
+        public DataTransferObjects.ProductType Create(DataTransferObjects.ProductType productType)
+        {
+            var repository = new DataAccess.Repository();
+            var productTypeModel = productType.ToModel(repository);
+            repository.ProductTypes.Add(productTypeModel);
+            repository.SaveChanges();
+            return productTypeModel.ToDto();
+        }
+
+        public DataTransferObjects.ProductType Update(DataTransferObjects.ProductType productType)
+        {
+            var repository = new DataAccess.Repository();
+            var productTypeModel = productType.ToModel(repository);
+            repository.Entry(productTypeModel).State = System.Data.Entity.EntityState.Modified;
+            repository.SaveChanges();
+            return productTypeModel.ToDto();
+        }
+
+        public void Delete(DataTransferObjects.ProductType productType)
+        {
+            var repository = new DataAccess.Repository();
+            repository.ProductTypes.Remove(productType.ToModel(repository));
+            repository.SaveChanges();
         }
     }
 }
