@@ -34,10 +34,11 @@ namespace LegendsOfLunchtime.Managers
             return ratingTypeModel.ToDto();
         }
 
-        public void Delete(DataTransferObjects.RatingType ratingType)
+        public void Delete(Guid ratingTypeId)
         {
             var repository = new DataAccess.Repository();
-            repository.RatingTypes.Remove(ratingType.ToModel(repository));
+            var ratingType = repository.RatingTypes.Single(x => x.Id == ratingTypeId);
+            repository.RatingTypes.Remove(ratingType);
             repository.SaveChanges();
         }
     }

@@ -34,10 +34,11 @@ namespace LegendsOfLunchtime.Managers
             return brandModel.ToDto();
         }
 
-        public void Delete(DataTransferObjects.Brand brand)
+        public void Delete(Guid brandId)
         {
             var repository = new DataAccess.Repository();
-            repository.Brands.Remove(brand.ToModel(repository));
+            var brand = repository.Brands.Single(b => b.Id == brandId);
+            repository.Brands.Remove(brand);
             repository.SaveChanges();
         }
     }

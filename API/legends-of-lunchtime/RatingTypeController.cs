@@ -33,11 +33,11 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpDelete]
-        [Route("legends-of-lunchtime/rating-type")]
+        [Route("legends-of-lunchtime/rating-type/{id}")]
         [Authorize]
-        public void Delete(DataTransferObjects.RatingType ratingType)
+        public void Delete(Guid id)
         {
-            new Managers.RatingTypeManager().Delete(ratingType);
+            new Managers.RatingTypeManager().Delete(id);
         }
     }
 }

@@ -33,11 +33,11 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpDelete]
-        [Route("legends-of-lunchtime/product")]
+        [Route("legends-of-lunchtime/product/{id}")]
         [Authorize]
-        public void Delete(DataTransferObjects.Product product)
+        public void Delete(Guid id)
         {
-            new Managers.ProductManager().Delete(product);
+            new Managers.ProductManager().Delete(id);
         }
     }
 }

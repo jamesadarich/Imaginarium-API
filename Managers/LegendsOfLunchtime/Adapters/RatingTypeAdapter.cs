@@ -39,6 +39,10 @@ namespace LegendsOfLunchtime.Managers.Adapters
             }
 
             model.IconUrl = ratingType.IconUrl;
+            if (model.IconUrl == null)
+            {
+                model.IconUrl = "default.svg";
+            }
             model.Name = ratingType.Name;
 
             return model;
