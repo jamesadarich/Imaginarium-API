@@ -19,7 +19,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpPost]
-        [Route("legends-of-lunchtime/product-types")]
+        [Route("legends-of-lunchtime/product-type")]
         [Authorize]
         public DataTransferObjects.ProductType Post(DataTransferObjects.ProductType productType)
         {
@@ -27,7 +27,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpPut]
-        [Route("legends-of-lunchtime/product-types")]
+        [Route("legends-of-lunchtime/product-type")]
         [Authorize]
         public DataTransferObjects.ProductType Put(DataTransferObjects.ProductType productType)
         {
@@ -35,7 +35,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpDelete]
-        [Route("legends-of-lunchtime/product-types")]
+        [Route("legends-of-lunchtime/product-type")]
         [Authorize]
         public void Delete(DataTransferObjects.ProductType productType)
         {

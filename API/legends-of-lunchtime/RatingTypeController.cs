@@ -17,7 +17,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpPost]
-        [Route("legends-of-lunchtime/rating-types")]
+        [Route("legends-of-lunchtime/rating-type")]
         [Authorize]
         public DataTransferObjects.RatingType Post(DataTransferObjects.RatingType ratingType)
         {
@@ -25,7 +25,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpPut]
-        [Route("legends-of-lunchtime/rating-types")]
+        [Route("legends-of-lunchtime/rating-type")]
         [Authorize]
         public DataTransferObjects.RatingType Put(DataTransferObjects.RatingType ratingType)
         {
@@ -33,7 +33,7 @@ namespace LegendsOfLunchtime.Api
         }
 
         [HttpDelete]
-        [Route("legends-of-lunchtime/rating-types")]
+        [Route("legends-of-lunchtime/rating-type")]
         [Authorize]
         public void Delete(DataTransferObjects.RatingType ratingType)
         {
