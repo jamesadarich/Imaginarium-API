@@ -19,7 +19,6 @@ namespace LegendsOfLunchtime.Managers.Adapters
 
             dto.Content = review.Content;
             dto.Id = review.Id;
-            dto.Slug = review.Title.Replace(" ", "_");
             dto.Summary = review.Summary;
             dto.Timestamp = review.Timestamp;
             dto.Title = review.Title;
@@ -46,7 +45,7 @@ namespace LegendsOfLunchtime.Managers.Adapters
             }
 
             model.Content = review.Content;
-            model.Slug = review.Slug;
+            model.Slug = review.Title.Replace(" ", "_");
             model.Summary = review.Summary;
             model.Timestamp = review.Timestamp;
             model.Title = review.Title;
