@@ -4,9 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Imaginarium.API.P
 
-namespace ErrorReaper.API
+namespace ErrorReaper.Api
 {
     public class DotNetReportController : ApiController
     {
