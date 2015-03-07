@@ -5,38 +5,15 @@ using System.Web;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
-using ErrorReaper.Managers.Adapters;
+using ErrorReaper.DataTransferObjects;
 
-namespace Imaginarium.API.Filters
+namespace ErrorReaper.Api.Filters
 {
     public class UnhandledExceptionFilter : ExceptionFilterAttribute
     {
         public override void OnException(HttpActionExecutedContext context)
         {
-            var request = HttpWebRequest.CreateHttp("http://api.imaginarium.getsett.net/error-reaper/report/dot-net");
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            using (var streamWriter = new System.IO.StreamWriter(request.GetRequestStream()))
-            {
-                var reportDto = context.Exception.ToDto();
-                var reportJson =  new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(reportDto);
-                streamWriter.Write(reportJson);
-            }
-
-            try
-            {
-                var httpResponse = (HttpWebResponse)request.GetResponse();
-                using (var streamReader = new System.IO.StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var responseText = streamReader.ReadToEnd();
-                    //Now you have your response.
-                    //or false depending on information in the response
-                }
-            }
-            catch
-            {
-
-            }
+            new Managers.ExceptionManager().SendReport(context.Exception);
 
             var response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
             response.Content = new StringContent(context.Exception.Message);

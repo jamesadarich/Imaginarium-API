@@ -66,6 +66,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +82,7 @@
     <Compile Include="ErrorReaper\Adapters\ExceptionAdapter.cs" />
     <Compile Include="ErrorReaper\AndroidReportManager.cs" />
     <Compile Include="ErrorReaper\DotNetReportManager.cs" />
+    <Compile Include="ErrorReaper\ExceptionManager.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\BrandAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\ProductAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\ProductTypeAdapter.cs" />
