@@ -19,7 +19,7 @@ namespace LegendsOfLunchtime.Managers.Adapters
 
             dto.Content = review.Content;
             dto.Id = review.Id;
-            dto.Slug = review.Slug;
+            dto.Slug = review.Title.Replace(" ", "_");
             dto.Summary = review.Summary;
             dto.Timestamp = review.Timestamp;
             dto.Title = review.Title;
