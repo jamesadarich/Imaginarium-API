@@ -37,6 +37,7 @@ namespace ErrorReaper.Managers.Adapters
 
             var modelApplication = new Models.Application();
 
+            modelApplication.Id = Guid.NewGuid();
             modelApplication.Name = dtoApplication.Name;
 
             return modelApplication;

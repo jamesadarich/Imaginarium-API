@@ -27,7 +27,8 @@ namespace ErrorReaper.Api
 
         [HttpPost]
         [Route("error-reaper/report/dot-net")]
-        public DataTransferObjects.DotNetReport Get(DataTransferObjects.DotNetReport report)
+        [Filters.UnhandledExceptionFilter]
+        public DataTransferObjects.DotNetReport Post(DataTransferObjects.DotNetReport report)
         {
             var manager = new Managers.DotNetReportManager();
             return manager.Create(report);

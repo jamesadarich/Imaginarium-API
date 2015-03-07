@@ -41,6 +41,7 @@ namespace ErrorReaper.Managers.Adapters
 
             var modelReport = new Models.DotNetReport();
 
+            modelReport.Id = Guid.NewGuid();
             modelReport.Timestamp = dtoReport.Timestamp;
 
             modelReport.Application = dtoReport.Application.ToModel(repository);

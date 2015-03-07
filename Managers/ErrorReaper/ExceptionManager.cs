@@ -32,9 +32,9 @@ namespace ErrorReaper.Managers
                     //or false depending on information in the response
                 }
             }
-            catch
+            catch (System.Net.WebException e)
             {
-
+                Console.Out.Write(e.Message);
             }
         }
     }

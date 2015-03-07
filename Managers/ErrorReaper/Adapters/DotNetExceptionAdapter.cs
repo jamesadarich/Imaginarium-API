@@ -40,6 +40,7 @@ namespace ErrorReaper.Managers.Adapters
 
             var modelException = new Models.DotNetException();
 
+            modelException.Id = Guid.NewGuid();
             modelException.Message = dtoException.Message;
             modelException.StackTrace = dtoException.StackTrace;
 
