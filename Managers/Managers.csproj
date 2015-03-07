@@ -74,7 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorReaper\Adapters\AndroidReportAdapter.cs" />
+    <Compile Include="ErrorReaper\Adapters\ApplicationAdapter.cs" />
+    <Compile Include="ErrorReaper\Adapters\DotNetExceptionAdapter.cs" />
+    <Compile Include="ErrorReaper\Adapters\DotNetReportAdapter.cs" />
+    <Compile Include="ErrorReaper\Adapters\ExceptionAdapter.cs" />
     <Compile Include="ErrorReaper\AndroidReportManager.cs" />
+    <Compile Include="ErrorReaper\DotNetReportManager.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\BrandAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\ProductAdapter.cs" />
     <Compile Include="LegendsOfLunchtime\Adapters\ProductTypeAdapter.cs" />

@@ -120,6 +120,7 @@ namespace LegendsOfLunchtime.Api
         [Authorize]
         [HttpPost]
         [Route("legends-of-lunchtime/review")]
+        [Imaginarium.API.Filters.UnhandledExceptionFilter]
         public DataTransferObjects.Review Post([FromBody] DataTransferObjects.Review review)
         {
             var username = User.Identity.Name;

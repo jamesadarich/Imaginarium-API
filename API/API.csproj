@@ -116,6 +116,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="error-reporting\AndroidReportController.cs" />
+    <Compile Include="error-reporting\DotNetReportController.cs" />
     <Compile Include="Filters\UnhandledExceptionFilter.cs" />
     <Compile Include="legends-of-lunchtime\AccountController.cs" />
     <Compile Include="legends-of-lunchtime\BrandController.cs" />

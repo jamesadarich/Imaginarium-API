@@ -43,6 +43,9 @@
     <Compile Include="ErrorReaper\AndroidReport.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ErrorReaper\Application.cs" />
+    <Compile Include="ErrorReaper\DotNetException.cs" />
+    <Compile Include="ErrorReaper\DotNetReport.cs" />
     <Compile Include="Imaginarium\Identity.cs" />
     <Compile Include="LegendsOfLunchtime\Brand.cs" />
     <Compile Include="LegendsOfLunchtime\Image.cs" />
