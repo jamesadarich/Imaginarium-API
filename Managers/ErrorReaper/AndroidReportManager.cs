@@ -20,7 +20,7 @@ namespace ErrorReaper.Managers
             return report;
         }
 
-        public IEnumerable<DataTransferObjects.AndroidReport> GetAll(string sort, int take)
+        public IEnumerable<DataTransferObjects.AndroidReport> GetAll(string sort, int skip, int take)
         {
             if (take <= 0)
             {
@@ -29,7 +29,9 @@ namespace ErrorReaper.Managers
 
             var models = new DataAccess.Repository().AndroidReports.ToList();
 
-            return models.OrderByDescending(x => x.CrashDate).Take(take).Select(m => m.ToDto());
+            return models.OrderByDescending(x => x.CrashDate)
+                                            .Skip(skip)
+                                            .Take(take).Select(m => m.ToDto());
         }
     }
 }

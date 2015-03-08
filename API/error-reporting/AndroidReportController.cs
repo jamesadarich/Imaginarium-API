@@ -11,11 +11,13 @@ namespace ErrorReaper.Api
     {
         [HttpGet]
         [Route("error-reporting/reports/android")]
-        public IEnumerable<DataTransferObjects.AndroidReport> Get([FromUri] string sort = null, [FromUri] int take = 10)
+        public IEnumerable<DataTransferObjects.AndroidReport> Get([FromUri] string sort = null,
+                                                                  [FromUri] int skip = 0,
+                                                                  [FromUri] int take = 10)
         {
             var manager = new Managers.AndroidReportManager();
 
-            return manager.GetAll(sort, take);
+            return manager.GetAll(sort, skip, take);
         }
 
         [HttpPut]

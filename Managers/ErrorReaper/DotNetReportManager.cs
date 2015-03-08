@@ -15,7 +15,7 @@ namespace ErrorReaper.Managers
             return repository.DotNetReports.Single(r => r.Id == reportId).ToDto();
         }
 
-        public IEnumerable<DataTransferObjects.DotNetReport> GetAll(string sort, int take)
+        public IEnumerable<DataTransferObjects.DotNetReport> GetAll(string sort, int skip, int take)
         {
             if (take <= 0)
             {
@@ -23,7 +23,9 @@ namespace ErrorReaper.Managers
             }
 
             var repository = new DataAccess.Repository();
-            return repository.DotNetReports.OrderByDescending(x => x.Timestamp).Take(take).ToList().Select(r => r.ToDto());
+            return repository.DotNetReports.OrderByDescending(x => x.Timestamp)
+                                            .Skip(skip)
+                                            .Take(take).ToList().Select(r => r.ToDto());
         }
 
         public DataTransferObjects.DotNetReport Create(DataTransferObjects.DotNetReport report)
