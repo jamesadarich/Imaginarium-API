@@ -11,7 +11,7 @@ namespace ErrorReaper.Api
     {
         [HttpGet]
         [Route("error-reaper/reports/dot-net")]
-        public IEnumerable<DataTransferObjects.DotNetReport> Get([FromUri] string sort, [FromUri] int take)
+        public IEnumerable<DataTransferObjects.DotNetReport> Get([FromUri] string sort = null, [FromUri] int take = 10)
         {
             var manager = new Managers.DotNetReportManager();
             return manager.GetAll(sort, take);
