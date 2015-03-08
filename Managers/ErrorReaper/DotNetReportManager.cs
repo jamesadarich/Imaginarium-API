@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ErrorReaper.Managers.Adapters;
+using Imaginarium.DataAccess.Extensions;
 
 namespace ErrorReaper.Managers
 {
@@ -23,9 +24,11 @@ namespace ErrorReaper.Managers
             }
 
             var repository = new DataAccess.Repository();
-            return repository.DotNetReports.OrderByDescending(x => x.Timestamp)
+            return repository.DotNetReports.Sort(sort)
                                             .Skip(skip)
-                                            .Take(take).ToList().Select(r => r.ToDto());
+                                            .Take(take)
+                                            .ToList()
+                                            .Select(r => r.ToDto());
         }
 
         public DataTransferObjects.DotNetReport Create(DataTransferObjects.DotNetReport report)

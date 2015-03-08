@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ErrorReaper.Managers.Adapters;
+using Imaginarium.DataAccess.Extensions;
 
 namespace ErrorReaper.Managers
 {
@@ -27,11 +28,12 @@ namespace ErrorReaper.Managers
                 take = 10;
             }
 
-            var models = new DataAccess.Repository().AndroidReports.ToList();
-
-            return models.OrderByDescending(x => x.CrashDate)
+            return new DataAccess.Repository().AndroidReports
+                                            .Sort(sort)
                                             .Skip(skip)
-                                            .Take(take).Select(m => m.ToDto());
+                                            .Take(take)
+                                            .ToList()
+                                            .Select(m => m.ToDto());
         }
     }
 }
