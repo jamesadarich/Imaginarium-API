@@ -15,10 +15,15 @@ namespace ErrorReaper.Managers
             return repository.DotNetReports.Single(r => r.Id == reportId).ToDto();
         }
 
-        public IEnumerable<DataTransferObjects.DotNetReport> GetAll()
+        public IEnumerable<DataTransferObjects.DotNetReport> GetAll(string sort, int take)
         {
+            if (take <= 0)
+            {
+                take = 10;
+            }
+
             var repository = new DataAccess.Repository();
-            return repository.DotNetReports.ToList().Select(r => r.ToDto());
+            return repository.DotNetReports.OrderByDescending(x => x.Timestamp).Take(take).ToList().Select(r => r.ToDto());
         }
 
         public DataTransferObjects.DotNetReport Create(DataTransferObjects.DotNetReport report)

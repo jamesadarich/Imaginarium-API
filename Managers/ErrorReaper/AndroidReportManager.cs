@@ -20,11 +20,16 @@ namespace ErrorReaper.Managers
             return report;
         }
 
-        public IEnumerable<DataTransferObjects.AndroidReport> GetAll()
+        public IEnumerable<DataTransferObjects.AndroidReport> GetAll(string sort, int take)
         {
+            if (take <= 0)
+            {
+                take = 10;
+            }
+
             var models = new DataAccess.Repository().AndroidReports.ToList();
 
-            return models.Select(m => m.ToDto());
+            return models.OrderByDescending(x => x.CrashDate).Take(take).Select(m => m.ToDto());
         }
     }
 }
