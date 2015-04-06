@@ -41,11 +41,11 @@ namespace TeamBuilder.Managers
             return model.ToDto();
         }
 
-        public void Delete(DataTransferObjects.Player player)
+        public void Delete(Guid playerId)
         {
             var repository = new DataAccess.Repository();
 
-            var model = player.ToModel(repository);
+            var model = repository.Players.Single(player => player.Id == playerId);
             repository.Players.Remove(model);
             repository.SaveChanges();
         }

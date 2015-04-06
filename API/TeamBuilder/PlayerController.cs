@@ -32,5 +32,12 @@ namespace TeamBuilder.Api
             return new Managers.PlayerManager().Update(player);
         }
 
+        [HttpDelete]
+        [Authorize]
+        [Route("team-builder/player/{playerId}")]
+        public DataTransferObjects.Player Put(Guid playerId)
+        {
+            return new Managers.PlayerManager().Delete(playerId);
+        }
     }
 }
