@@ -14,6 +14,7 @@ namespace TeamBuilder.Managers.Adapters
 
             var dto = new DataTransferObjects.Player();
 
+            dto.Id = model.Id;
             dto.FirstName = model.FirstName;
             dto.LastName = model.LastName;
             dto.IsActive = model.IsActive;

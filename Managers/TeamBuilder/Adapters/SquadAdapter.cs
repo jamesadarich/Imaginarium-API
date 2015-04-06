@@ -14,6 +14,7 @@ namespace TeamBuilder.Managers.Adapters
 
             var dto = new DataTransferObjects.Squad();
 
+            dto.Id = model.Id;
             dto.Name = model.Name;
 
             if (model.Players.Count() > 0)
