@@ -57,6 +57,10 @@
     <Compile Include="LegendsOfLunchtime\User.cs" />
     <Compile Include="PatternBuilder\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamBuilder\Match.cs" />
+    <Compile Include="TeamBuilder\Player.cs" />
+    <Compile Include="TeamBuilder\Squad.cs" />
+    <Compile Include="TeamBuilder\Team.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

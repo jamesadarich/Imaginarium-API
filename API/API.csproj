@@ -132,6 +132,8 @@
     <Compile Include="Startup.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TeamBuilder\MatchController.cs" />
+    <Compile Include="TeamBuilder\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

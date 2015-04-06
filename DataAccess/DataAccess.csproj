@@ -80,6 +80,7 @@
     <Compile Include="LegendsOfLunchtime\Repository.cs" />
     <Compile Include="ErrorReaper\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamBuilder\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
