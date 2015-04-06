@@ -35,9 +35,9 @@ namespace TeamBuilder.Api
         [HttpDelete]
         [Authorize]
         [Route("team-builder/player/{playerId}")]
-        public DataTransferObjects.Player Put(Guid playerId)
+        public void Delete(Guid playerId)
         {
-            return new Managers.PlayerManager().Delete(playerId);
+            new Managers.PlayerManager().Delete(playerId);
         }
     }
 }
