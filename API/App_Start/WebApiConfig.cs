@@ -21,6 +21,9 @@ namespace API
             );
 
 
+            config.Filters.Add(new ErrorReaper.Api.Filters.UnhandledExceptionFilter());
+
+
             //var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             //jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }

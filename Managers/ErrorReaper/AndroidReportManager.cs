@@ -12,41 +12,25 @@ namespace ErrorReaper.Managers
     {
         public DataTransferObjects.AndroidReport Update(DataTransferObjects.AndroidReport report)        
         {
-            try
-            {
-                var model = report.ToModel();
+            var model = report.ToModel();
 
-                var repository = new DataAccess.Repository();
-                var existingModel = repository.AndroidReports.SingleOrDefault(m => m.Id == model.Id);
-                if (existingModel != null)
-                {
-                    existingModel.LogCat = model.LogCat;
-                    existingModel.CrashDate = model.CrashDate;
-                    existingModel.PackageName = model.PackageName;
-                    existingModel.StackTrace = model.StackTrace;
-                    repository.Entry(existingModel).State = System.Data.Entity.EntityState.Modified;
-                }
-                else
-                {
-                    repository.AndroidReports.Add(model);
-                }
-                repository.SaveChanges();
-
-                return report;
-            }
-            catch (Exception e)
+            var repository = new DataAccess.Repository();
+            var existingModel = repository.AndroidReports.SingleOrDefault(m => m.Id == model.Id);
+            if (existingModel != null)
             {
-                var dotNetReport = new DataTransferObjects.DotNetReport();
-                dotNetReport.Application = new DataTransferObjects.Application();
-                dotNetReport.Application.Name = "Android Report Manager";
-                dotNetReport.Exception = new DataTransferObjects.DotNetException();
-                dotNetReport.Exception.Message = e.Message;
-                dotNetReport.Exception.StackTrace = e.StackTrace;
-                dotNetReport.Timestamp = DateTime.UtcNow;
-                var dotNetManager = new DotNetReportManager();
-                dotNetManager.Create(dotNetReport);
-                throw e;
+                existingModel.LogCat = model.LogCat;
+                existingModel.CrashDate = model.CrashDate;
+                existingModel.PackageName = model.PackageName;
+                existingModel.StackTrace = model.StackTrace;
+                repository.Entry(existingModel).State = System.Data.Entity.EntityState.Modified;
             }
+            else
+            {
+                repository.AndroidReports.Add(model);
+            }
+            repository.SaveChanges();
+
+            return report;
         }
 
         public IEnumerable<DataTransferObjects.AndroidReport> GetAll(string sort, int skip, int take)
